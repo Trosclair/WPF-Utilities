@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
 using System.Windows;
+using System.Windows.Data;
+using System.Windows.Markup;
 
 namespace WPFUtilities.Converters.BoolTo
 {
-    public class BoolToVisibility : IValueConverter
+    public class BoolToVisibility : MarkupExtension, IValueConverter
     {
         public Visibility TrueVisibility { get; set; } = Visibility.Visible;
         public Visibility FalseVisibility { get; set; } = Visibility.Collapsed;
@@ -21,6 +18,11 @@ namespace WPFUtilities.Converters.BoolTo
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             return value is Visibility visibility && visibility == TrueVisibility;
+        }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
         }
     }
 }
