@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace WPF_Utilities
+namespace WPFUtilities
 {
     public class ObservableObject : INotifyPropertyChanged
     {

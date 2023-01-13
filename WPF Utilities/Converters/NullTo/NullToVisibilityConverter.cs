@@ -2,7 +2,7 @@
 using System.Windows;
 using System;
 
-namespace WPF_Utilities.Converters.NullTo
+namespace WPFUtilities.Converters.NullTo
 {
     public class NullToVisibilityConverter : IValueConverter
     {
